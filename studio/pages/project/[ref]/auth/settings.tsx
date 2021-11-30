@@ -157,12 +157,12 @@ const Settings = () => {
           ])}
           model={{
             MAILER_SECURE_EMAIL_CHANGE_ENABLED: model.MAILER_SECURE_EMAIL_CHANGE_ENABLED,
-            SMTP_ADMIN_EMAIL: isCustomSMTPEnabled ? model.SMTP_ADMIN_EMAIL : "",
-            SMTP_HOST: isCustomSMTPEnabled ? model.SMTP_HOST : "",
-            SMTP_PORT: isCustomSMTPEnabled ? model.SMTP_PORT : "",
-            SMTP_USER: isCustomSMTPEnabled ? model.SMTP_USER : "",
-            SMTP_PASS: isCustomSMTPEnabled ? model.SMTP_PASS : "",
-            SMTP_SENDER_NAME: isCustomSMTPEnabled ? model.SMTP_SENDER_NAME : "",
+            SMTP_ADMIN_EMAIL: isCustomSMTPEnabled ? model.SMTP_ADMIN_EMAIL : '',
+            SMTP_HOST: isCustomSMTPEnabled ? model.SMTP_HOST : '',
+            SMTP_PORT: isCustomSMTPEnabled ? model.SMTP_PORT : '',
+            SMTP_USER: isCustomSMTPEnabled ? model.SMTP_USER : '',
+            SMTP_PASS: isCustomSMTPEnabled ? model.SMTP_PASS : '',
+            SMTP_SENDER_NAME: isCustomSMTPEnabled ? model.SMTP_SENDER_NAME : '',
             RATE_LIMIT_EMAIL_SENT: isCustomSMTPEnabled ? model.RATE_LIMIT_EMAIL_SENT : 30,
           }}
           onSubmit={(model: any) =>
@@ -208,19 +208,20 @@ const Settings = () => {
             <label className="">Enable Custom SMTP</label>
             <div className="form-control flex items-center">
               <Toggle
-                onToggle={(value : any) => {
+                // @ts-ignore
+                onToggle={(value: any) => {
                   /*
                    * temporary solution
                    * clear the values of SMTP when toggling
-                   */ 
-                  if(!value) {
+                   */
+                  if (!value) {
                     onFormSubmit({
-                      SMTP_ADMIN_EMAIL: "",
-                      SMTP_HOST: "",
-                      SMTP_PORT: "",
-                      SMTP_USER: "",
-                      SMTP_PASS: "",
-                      SMTP_SENDER_NAME: "",
+                      SMTP_ADMIN_EMAIL: '',
+                      SMTP_HOST: '',
+                      SMTP_PORT: '',
+                      SMTP_USER: '',
+                      SMTP_PASS: '',
+                      SMTP_SENDER_NAME: '',
                       RATE_LIMIT_EMAIL_SENT: 30,
                     })
                   }
